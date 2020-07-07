@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Cospect</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <style>
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border: 1px solid white;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+
+
+.typewriter h2 {
+  color: #fff;
+  font-family: Trebuchet MS;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+ 
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+div.a{
+transform:rotate(40deg);
+}
+</style>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+				<header id="header">
+					<h1 id="logo"><a href="https://sites.google.com/view/konect-co/home"><strong><b><h1><img src="images/logo.png" width="200px" padding-top:"25px";></img></h1></b></strong></a></h1>
+					<nav id="nav">
+						<ul>
+							<h2 style=font-family:Verdana><li><a href="index.html">[HOME]</a>
+								&nbsp;&nbsp;<a href="#">[CONTACT]</a></h2></li>
+						</ul>
+ 
+					</nav>
+				</header>
+                                 <br><hr>
+
+				<section id="banner">
+					<div class="content">
+
+						<header>
+                                                        <div class="typewriter"><h2><strong><center>&nbsp;Welcome To Cospect !</center></strong></h2></div>
+							<h2>&nbsp;&nbsp;&nbsp;Analyse your cough symptoms.</h2><br>
+                                                       <center> <a href="#" class="button primary"><strong><b>Begin Analysis</b></strong></a></center>
+							<br><ul><li><p style="text-align:left";>Before we begin :</p></li>
+                                                              <ol>
+                                                               <b><li type="I"><p id="ms" style="text-align:left";>Ensure your device has a microphone.</p></li>
+                                                               <li type="I"><p id="msg"style="text-align:left";>Give access permission to your microphone.</p></li></b>
+                                                                </ol> 
+                                                         </ul>
+						</header>
+						<span class="image" width=100px;><img src="images/1.gif"/></span>
+					</div>
+					<a href="#footer" class="goto-next scrolly">Next</a>
+				</section>
+                              <section>
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.linkedin.com/company/konect-co" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                                               <li><a href="https://sites.google.com/view/konect-co/home"class="icon solid alt fas fa-globe"><span class="label">Website</span></a></li>
+                                                <li><a href="https://www.bing.com/maps?where=Milpitas%2C%20CALIFORNIA%2095035%2C%20US"class="icon solid alt fas fa-map-marker-alt"><span class="label">Location</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+                                          </ul>
+					<ul class="copyright">
+						<li><center><div class="a"><img src="images/unnamed.png" width="56px"; height="71.9px" ></img> </div><em>Copyright &copy;&nbsp;2020. All rights reserved</em></center></li>
+					</ul>
+				</footer>
+</section>
+
+		</div>
+<script>
+		navigator.mediaDevices.enumerateDevices().then(function(devices) {
+					devices.forEach(function(device) {
+                                                     if (device.kind === 'audioinput')
+                                                     {
+                                                        alert("Mic detected")
+                                                         y="Ensure your device has a microphone.✔️";
+         document.getElementById("ms").innerHTML = y;
+                                                     };
+                                                   
+                                                                         
+                                                                        
+          });
+                                                               
+     }).catch(function(err) {
+					alert("mic undetected");
+                                      y="Ensure your device has a microphone.\u274C";
+                                      document.getElementById("ms").innerHTML = y;
+});
+    
+
+</script>
+			
+     
+	<script>
+var x;
+  navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(function(stream) {
+        alert("Mic Access Enabled")
+          x="Give access permission to your microphone.✔️ ";
+         document.getElementById("msg").innerHTML = x;
+      })
+      .catch(function(err) {
+        alert("Permission Denied !")
+         x="Give access permission to your microphone.\u274C";
+         document.getElementById("msg").innerHTML = x;
+      });
+    </script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
