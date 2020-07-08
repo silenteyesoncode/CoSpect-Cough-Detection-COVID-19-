@@ -75,21 +75,29 @@ transform:rotate(40deg);
 					<div class="content">
 
 						<header>
-                                                        <div class="typewriter"><h2><strong><center>&nbsp;Welcome To Cospect !</center></strong></h2></div>
+               <div class="typewriter"><h2><strong><center>&nbsp;Welcome To Cospect !</center></strong></h2></div>
 							<h2>&nbsp;&nbsp;&nbsp;Analyse your cough symptoms.</h2><br>
-                                                       <center> <a href="#" class="button primary"><strong><b>Begin Analysis</b></strong></a></center>
+               <center> <a href="#" class="button primary"><strong><b>Begin Analysis</b></strong></a></center>
 							<br><ul><li><p style="text-align:left";>Before we begin :</p></li>
-                                                              <ol>
-                                                               <b><li type="I"><p id="ms" style="text-align:left";>Ensure your device has a microphone.</p></li>
-                                                               <li type="I"><p id="msg"style="text-align:left";>Give access permission to your microphone.</p></li></b>
-                                                                </ol> 
-                                                         </ul>
+                 <ol>
+                  <b><li type="I"><p id="ms" style="text-align:left";>Ensure your device has a microphone.</p></li>
+                <li type="I"><p id="msg"style="text-align:left";>Give access permission to your microphone.</p></li></b>
+                   </ol> 
+                  </ul>
 						</header>
 						<span class="image" width=100px;><img src="images/1.gif"/></span>
 					</div>
 					<a href="#footer" class="goto-next scrolly">Next</a>
-				</section>
-                              <section>
+        </section>
+        
+        <section>
+          <div class="container">
+            <h1 id="heading"></h1>
+            <div id="content"></div>
+          </div>
+        </section>
+
+        <section>
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" target="_blank" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
@@ -105,14 +113,28 @@ transform:rotate(40deg);
 				</footer>
 </section>
 
-		</div>
+    </div>
+    <script>
+      var x;
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(function(stream) {
+              alert("Mic Access Enabled")
+                x="Give access permission to your microphone.✔️ ";
+               document.getElementById("msg").innerHTML = x;
+            })
+            .catch(function(err) {
+              alert("Permission Denied !")
+               x="Give access permission to your microphone.\u274C";
+               document.getElementById("msg").innerHTML = x;
+            });
+          </script>
 <script>
 		navigator.mediaDevices.enumerateDevices().then(function(devices) {
 					devices.forEach(function(device) {
-                                                     if (device.kind === 'audioinput')
-                                                     {
-                                                        alert("Mic detected")
-                                                         y="Ensure your device has a microphone.✔️";
+             if (device.kind === 'audioinput')
+              {
+                 alert("Mic detected")
+              y="Ensure your device has a microphone.✔️";
          document.getElementById("ms").innerHTML = y;
                                                      };
                                                    
@@ -130,20 +152,7 @@ transform:rotate(40deg);
 </script>
 			
      
-	<script>
-var x;
-  navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(function(stream) {
-        alert("Mic Access Enabled")
-          x="Give access permission to your microphone.✔️ ";
-         document.getElementById("msg").innerHTML = x;
-      })
-      .catch(function(err) {
-        alert("Permission Denied !")
-         x="Give access permission to your microphone.\u274C";
-         document.getElementById("msg").innerHTML = x;
-      });
-    </script>
+      <script src="app.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
